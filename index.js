@@ -5,7 +5,7 @@ function renderResults(data) {
 
 function renderResult(result) {
   console.log(result.name)
-  return 'test'
+  return `<div><p>${result.name}</p></div>`
 }
 
 
