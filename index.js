@@ -11,7 +11,7 @@ function renderResult(result) {
 $('button').on('click', function(){
   const searchTerms = $('#searchTerms').val()
 
-  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, function(data) {
+  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
     $('#results').html(renderResults(data))
   })
 })
