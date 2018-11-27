@@ -1,6 +1,7 @@
 function renderResults(data) {
   console.log(data.items)
   data.items.map(result => renderResult(result))
+  console.log(result)
 }
 
 function renderResult(result) {
@@ -8,15 +9,15 @@ function renderResult(result) {
   return 'result.name'
 }
 
-$(document).ready(function (){
-  $('button').on('click', function(){
-    const searchTerms = $('#searchTerms').val()
 
-    $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, function(data) {
-      $('#results').append(renderResults(data))
-    })
+$('button').on('click', function(){
+  const searchTerms = $('#searchTerms').val()
+
+  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, function(data) {
+    $('#results').html(renderResults(data))
   })
 })
+$(document).ready(function (){})
 
 
 //     {
