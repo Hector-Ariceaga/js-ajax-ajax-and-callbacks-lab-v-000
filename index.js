@@ -4,6 +4,7 @@ function renderResults(data) {
 }
 
 function renderResult(result) {
+  console.log(result)
   return 'test'
 }
 
