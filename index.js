@@ -1,6 +1,7 @@
 function renderResults(data) {
   console.log(data.items)
   data.items.map(result => renderResult(result))
+  console.log(data.items.first)
 }
 
 function renderResult(result) {
