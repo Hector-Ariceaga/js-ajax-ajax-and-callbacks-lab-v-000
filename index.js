@@ -1,11 +1,9 @@
 function renderResults(data) {
-  console.log(data.items)
   data.items.map(result => renderResult(result))
   console.log(renderResult(Object.keys(data.items)[0]))
 }
 
 function renderResult(result) {
-  console.log(result.name)
   return `<div><p>${result.name}</p></div>`
 }
 
