@@ -1,6 +1,5 @@
 function renderResults(data) {
-  data.items.map(result => renderResult(result))
-  console.log(renderResult(Object.keys(data.items)[0]))
+  return data.items.map(result => renderResult(result))
 }
 
 function renderResult(result) {
