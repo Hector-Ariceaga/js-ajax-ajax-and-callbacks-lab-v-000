@@ -30,11 +30,13 @@ function showCommits(el) {
 }
 
 function renderCommits(data) {
-   let results = data.map(result => renderCommit(result)).join('')
+   let results = data.map(result => renderCommit(result))
+   console.log(results)
    return `<ol reversed>${results}</ol>`
 }
 
 function renderCommit(result) {
+  console.log(result)
   return
   `
   <li>
