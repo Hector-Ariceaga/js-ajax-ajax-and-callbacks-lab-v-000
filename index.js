@@ -30,6 +30,7 @@ function showCommits(el) {
 }
 
 function showCommits(data) {
+  console.log(data)
   return data.items.map(result => showCommit(result))
 }
 
@@ -38,8 +39,7 @@ function showCommit(result) {
   return
   `
   <div>
-    
+
   </div>
   `
 }
-
