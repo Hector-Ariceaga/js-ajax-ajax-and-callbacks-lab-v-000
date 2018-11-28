@@ -37,8 +37,8 @@ function renderCommits(data) {
 function renderCommit(result) {
   return
   `
-  <div>
+  <li>
     test
-  </div>
+  </li>
   `
 }
