@@ -3,9 +3,12 @@ function renderResults(data) {
 }
 
 function renderResult(result) {
-  return `<div><p>${result.name}</p></div>`
+  return `
+  <div>
+    <strong><p>${result.name}</p></strong>
+  </div>
+  `
 }
-
 
 $('button').on('click', function(){
   const searchTerms = $('#searchTerms').val()
