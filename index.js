@@ -5,7 +5,11 @@ function renderResults(data) {
 function renderResult(result) {
   return `
   <div>
-    <strong><p>${result.name}</p></strong>
+    <strong><p>${result.name}(Owner: ${result.owner.login})</p></strong>
+    <img src=${result.owner.avatar_url}>
+    <p>${data.items[i].description}</p><br>
+    <a href=${data.items[i].html_url}>See Full Repo Here</a><br>
+    <a href="#" data-repo=${result.name} data-owner=${result.owner.login} onclick="showCommits(this)">Show Commits</a>
   </div>
   `
 }
