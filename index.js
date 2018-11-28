@@ -1,7 +1,7 @@
 function renderResults(data) {
   console.log(data.items)
   data.items.map(result => renderResult(result))
-  console.log(Object.keys(data.items)[0])
+  console.log(renderResult(Object.keys(data.items)[0]))
 }
 
 function renderResult(result) {
