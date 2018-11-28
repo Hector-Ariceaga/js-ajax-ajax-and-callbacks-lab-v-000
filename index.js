@@ -29,12 +29,12 @@ function showCommits(el) {
   })
 }
 
-function showCommits(data) {
+function renderCommits(data) {
   console.log(data)
-  return data.items.map(result => showCommit(result))
+  return data.items.map(result => renderCommit(result))
 }
 
-function showCommit(result) {
+function renderCommit(result) {
   console.log(result)
   return
   `
