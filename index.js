@@ -7,7 +7,7 @@ function renderResult(result) {
   <div>
     <strong><p>${result.name}(Owner: ${result.owner.login})</p></strong>
     <img src=${result.owner.avatar_url}>
-    <p>${result.description}</p><br>
+    <p>${result.description}</p>
     <a href=${result.html_url}>See Full Repo Here</a><br>
     <a href="#" data-repo=${result.name} data-owner=${result.owner.login} onclick="showCommits(this)">Show Commits</a>
   </div>
