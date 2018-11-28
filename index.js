@@ -1,3 +1,12 @@
+$('button').on('click', function(){
+  const searchTerms = $('#searchTerms').val()
+
+  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
+    $('#results').html(renderResults(data))
+  })
+})
+$(document).ready(function (){})
+
 function renderResults(data) {
   return data.items.map(result => renderResult(result))
 }
@@ -14,21 +23,23 @@ function renderResult(result) {
   `
 }
 
-$('button').on('click', function(){
-  const searchTerms = $('#searchTerms').val()
-
-  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
-    $('#results').html(renderResults(data))
+function showCommits(el) {
+  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repo}/commits`, data => {
+    $('details').html(renderCommits(data))
   })
-})
-$(document).ready(function (){})
+}
 
-// let showCommits(el) {
-//     $.get({
-//       url : `https://api.github.com/repos/${el.dataset.owner}/${el.dataset.reoi}/commits`,
-//       type : 'GET'
-//     }).done(function(data) {
-//       console.log(data)
-//     })
-//   })
-// }
+function showCommits(data) {
+  return data.items.map(result => showCommit(result))
+}
+
+function showCommit(result) {
+  console.log(result)
+  return
+  `
+  <div>
+    
+  </div>
+  `
+}
+
