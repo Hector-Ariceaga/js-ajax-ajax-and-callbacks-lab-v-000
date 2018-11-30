@@ -1,8 +1,14 @@
+function displayError() {
+  $('#errors').html("There was an error. Please try again.")
+}
+
 function searchRepositories() {
   const searchTerms = $('#searchTerms').val()
 
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
-    $('#results').html(renderResults(data)).fail(error => displayError())
+    $('#results').html(renderResults(data))
+  }).fail(error => {
+    displayError()
   })
 }
 
@@ -26,7 +32,9 @@ function renderResult(result) {
 
 function showCommits(el) {
   $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`, data => {
-    $('#details').html(renderCommits(data)).fail(error => displayError())
+    $('#details').html(renderCommits(data))
+  }).fail(error => {
+    displayError()
   })
 }
 
@@ -37,8 +45,4 @@ function renderCommits(data) {
 
 function renderCommit(commit) {
   return `<li>  ${commit.sha}<br> ${commit.commit.author.name}(Username:${commit.author.login}) <div><img src=${commit.author.avatar_url}></div></li>`
-}
-
-function displayError() {
-  $('#errors').html("There was an error. Please try again.")
 }
